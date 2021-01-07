@@ -30,7 +30,7 @@ body{
     background-attachment: fixed;
 }
 header{
-    margin-top: 20px;
+    margin: 20px 0;
     background-color: #8d8c8c;
     box-shadow: 4px 4px 10px black;
 }
@@ -43,4 +43,36 @@ header{
     font-size: 320%;
     font-weight: 200;
     color: rgb(255, 255, 255);
+}
+.sectionController{
+    margin-top:100px;
+}
+.button1v1{
+    float: left;
+}
+.button1vc{
+    float: right;
+}
+.button:link,
+.button:visited{
+    display: inline-block;
+    width:250px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    background-color: rgb(114, 66, 66);
+    border: 1px solid  rgb(66, 25, 25);;
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
+}
+.button:hover{
+    background-color: rgb(138, 79, 79);
+    transform: translateY(1px);
+    box-shadow: 4px 0 10px rgb(44, 18, 18);
+}
+.button:active{
+    background-color: rgb(167, 85, 85);
+    transform: translateY(2px);
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
 }
