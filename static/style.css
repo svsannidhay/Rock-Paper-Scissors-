@@ -69,10 +69,10 @@ header{
 .button:hover{
     background-color: rgb(138, 79, 79);
     transform: translateY(1px);
-    box-shadow: 4px 0 10px rgb(44, 18, 18);
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
 }
 .button:active{
     background-color: rgb(167, 85, 85);
     transform: translateY(2px);
-    box-shadow: 4px 4px 10px rgb(44, 18, 18);
+    box-shadow: 4px 0 10px rgb(44, 18, 18);
 }
