@@ -17,7 +17,7 @@
     <section class="sectionController">
         <div class="row controller">
             <div class="button1v1">
-                <a href="#" class="button">Play with friend</a>
+                <a onclick="onevone();event.preventDefault();"  href="#" class="button">Play with friend</a>
             </div>
             <div class="button1vc">
                 <a href="#" class="button">play with computer</a>
@@ -31,10 +31,23 @@
                 <p id = "timerP1">00:00</p>
             </div>
             <div class="scoreBoard col span-1-of-3">
-                
+                <p id="score">00:00</p>
             </div>
             <div id ="tP2" class="timerPlayer2 col span-1-of-3">
                 <p id = "timerP2">00:00</p>
+            </div>
+        </div>
+    </section>
+    <section class="playArea">
+        <div class="row">
+            <div class="rock col span-1-of-3">
+                <img src="/static/images/rock.png" alt="Rock">
+            </div>
+            <div class="paper col span-1-of-3">
+                <img src="/static/images/paper.png" alt="Rock">
+            </div>
+            <div class="scissors col span-1-of-3">
+                <img src="/static/images/scissors.png" alt="Rock">
             </div>
         </div>
     </section>
