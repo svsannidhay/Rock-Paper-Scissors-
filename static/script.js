@@ -102,6 +102,23 @@ function updateScoreBoard(){
     document.getElementById("SB").appendChild(p);
 }
 
+function p1won(){
+    document.getElementById("result").remove();
+    let p = document.createElement("p");
+    p.setAttribute("id","result");
+    let text = document.createTextNode("PLAYER 1 WON");
+    p.appendChild(text);
+    document.getElementById("res").appendChild(p);
+}
+function p2won(){
+    document.getElementById("result").remove();
+    let p = document.createElement("p");
+    p.setAttribute("id", "result");
+    let text = document.createTextNode("PLAYER 2 WON");
+    p.appendChild(text);
+    document.getElementById("res").appendChild(p);
+}
+
 function showstats(){
     document.getElementById("p1Choice").remove();
     let p1 = document.createElement("p");
@@ -115,7 +132,7 @@ function showstats(){
         textP1 = document.createTextNode("Player 1 : PAPER ");
     }
     p1.appendChild(textP1);
-    document.getElementById("tP1").appendChild(p1);
+    document.getElementById("player1").appendChild(p1);
 
     document.getElementById("p2Choice").remove();
     let p2 = document.createElement("p");
@@ -129,7 +146,9 @@ function showstats(){
         textP2 = document.createTextNode("Player 2 : PAPER ");
     }
     p2.appendChild(textP2);
-    document.getElementById("tP2").appendChild(p2);
+    document.getElementById("player2").appendChild(p2);
+
+
 }
 
 async function onevone(){
