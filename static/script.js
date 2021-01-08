@@ -1,5 +1,5 @@
 async function startClock1(){
-    let time = 5*1000;
+    let time = 1*1000;
     return new Promise(function (resolve, reject) {
         let t = setInterval(function(){
             time--;
@@ -24,7 +24,7 @@ async function startClock1(){
     });
 }
 function startClock2(){
-    let time = 5*1000;
+    let time = 1*1000;
     return new Promise(function(resolve,reject){
         let t = setInterval(function(){
             time--;
@@ -66,7 +66,7 @@ function clickRock(){
         sp1 = 'R';
     }
     if(turn==2){
-        sp1 = 'R';
+        sp2 = 'R';
     }
 }
 function clickPaper(){
@@ -74,7 +74,7 @@ function clickPaper(){
         sp1 = 'P';
     }
     if(turn==2){
-        sp1 = 'P';
+        sp2 = 'P';
     }
 }
 function clickScissors(){
@@ -82,18 +82,62 @@ function clickScissors(){
         sp1 = 'S';
     }
     if(turn==2){
-        sp1 = 'S';
+        sp2 = 'S';
     }
 }
 
 var scoreP1 = 0;
 var scoreP2 = 0;
 
+function updateScoreBoard(){
+    let scoreP1Tens = Math.floor(scoreP1/10);
+    let scoreP1Left = scoreP1 - scoreP1Tens*10;
+    let scoreP2Tens = Math.floor(scoreP2/10);
+    let scoreP2Left = scoreP2 - scoreP2Tens*10;
+    document.getElementById("score").remove();
+    let p = document.createElement("p");
+    p.setAttribute("id","score");
+    let text = document.createTextNode(`${scoreP1Tens}${scoreP1Left}:${scoreP2Tens}${scoreP2Left}`);
+    p.appendChild(text);
+    document.getElementById("SB").appendChild(p);
+}
+
+function showstats(){
+    document.getElementById("p1Choice").remove();
+    let p1 = document.createElement("p");
+    p1.setAttribute("id","p1Choice");
+    let textP1;
+    if(sp1=='R'){
+        textP1 = document.createTextNode("Player 1 : ROCK ");
+    }else if(sp1=='S'){
+        textP1 = document.createTextNode("Player 1 : SCISSORS ");
+    }else if(sp1=='P'){
+        textP1 = document.createTextNode("Player 1 : PAPER ");
+    }
+    p1.appendChild(textP1);
+    document.getElementById("tP1").appendChild(p1);
+
+    document.getElementById("p2Choice").remove();
+    let p2 = document.createElement("p");
+    p2.setAttribute("id","p2Choice");
+    let textP2;
+    if(sp2=='R'){
+        textP2 = document.createTextNode("Player 2 : ROCK ");
+    }else if(sp2=='S'){
+        textP2 = document.createTextNode("Player 2 : SCISSORS ");
+    }else if(sp2=='P'){
+        textP2 = document.createTextNode("Player 2 : PAPER ");
+    }
+    p2.appendChild(textP2);
+    document.getElementById("tP2").appendChild(p2);
+}
+
 async function onevone(){
     let count = 0;
     while(count<2){
         if(count%2==0){
             turn = 1;
+            console.log(turn);
             await startClock1();
             if(sp1=='0'){
                 sp1 = rpsArray[generateRandom()];
@@ -102,6 +146,7 @@ async function onevone(){
             count++;
         }else{
             turn = 2;
+            console.log(turn);
             await startClock2();
             if(sp2=='0'){
                 sp2 = rpsArray[generateRandom()];
@@ -112,7 +157,7 @@ async function onevone(){
                 console.log("P2 wins");
             }
             else if(sp1=='R'&&sp2=='S'){
-                scroeP1++;
+                scoreP1++;
                 console.log("P1 wins");
             }
             else if(sp1=='P'&&sp2=='R'){
@@ -120,7 +165,7 @@ async function onevone(){
                 console.log("P1 wins");
             }
             else if(sp1=='P'&&sp2=='S'){
-                scroeP2++;
+                scoreP2++;
                 console.log("P2 wins");
             }
             else if(sp1=='S'&&sp2=='R'){
@@ -128,10 +173,11 @@ async function onevone(){
                 console.log("P2 wins");
             }
             else if(sp1=='S'&&sp2=='P'){
-                scroeP1++;
+                scoreP1++;
                 console.log("P1 wins");
             }
-            
+            showstats();
+            updateScoreBoard();
             sp1 = '0';
             sp2 = '0';
             count++;

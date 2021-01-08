@@ -81,17 +81,7 @@ header{
     margin-top: 80px;
     color: #fff;
 }
-.timerPlayer1 p{
-    margin: 0 auto;
-    width:105px;
-    padding: 12px 14px;
-    background-color: rgb(114, 66, 66);
-    border: 1px solid rgb(66, 25, 25);;
-    box-shadow: 4px 4px 10px rgb(44, 18, 18);
-    font-size: 150%;
-    font-weight: 100;
-}
-.timerPlayer2 p{
+.timerPlayer1 #timerP1{
     margin: 0 auto;
     width:105px;
     padding: 12px 14px;
@@ -101,7 +91,37 @@ header{
     font-size: 150%;
     font-weight: 100;
 }
-.scoreBoard p{
+.timerPlayer1 #p1Choice{
+    margin: 20px auto;
+    width:220px;
+    padding: 12px 14px;
+    font-size: 100%;
+    font-weight: 100;
+    background-color: rgb(114, 66, 66);
+    border: 1px solid rgb(66, 25, 25);
+        
+}
+.timerPlayer2 #timerP2{
+    margin: 0 auto;
+    width:105px;
+    padding: 12px 14px;
+    background-color: rgb(114, 66, 66);
+    border: 1px solid rgb(66, 25, 25);
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
+    font-size: 150%;
+    font-weight: 100;
+}
+.timerPlayer2 #p2Choice {
+    margin: 20px auto;
+    width: 220px;
+    padding: 12px 14px;
+    font-size: 100%;
+    font-weight: 100;
+    background-color: rgb(114, 66, 66);
+    border: 1px solid rgb(66, 25, 25);
+
+}
+.scoreBoard #score{
     margin: 0 auto;
     width:105px;
     padding: 12px 14px;
@@ -112,7 +132,7 @@ header{
     font-weight: 100;
 }
 .playArea{
-    margin-top: 80px;
+    margin-top: 50px;
 }
 .rock ,
 .paper,
