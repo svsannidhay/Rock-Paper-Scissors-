@@ -118,7 +118,14 @@ function p2won(){
     p.appendChild(text);
     document.getElementById("res").appendChild(p);
 }
-
+function draw(){
+    document.getElementById("result").remove();
+    let p = document.createElement("p");
+    p.setAttribute("id", "result");
+    let text = document.createTextNode("DRAW");
+    p.appendChild(text);
+    document.getElementById("res").appendChild(p);
+}
 function showstats(){
     document.getElementById("p1Choice").remove();
     let p1 = document.createElement("p");
@@ -151,7 +158,25 @@ function showstats(){
 
 }
 
-async function onevone(){
+async function match(){
+    document.getElementById("p1Choice").remove();
+    let p1 = document.createElement("p");
+    p1.setAttribute("id", "p1Choice");
+    let textP1 = document.createTextNode("PLAYER 1");
+    p1.appendChild(textP1);
+    document.getElementById("player1").appendChild(p1);
+    document.getElementById("p2Choice").remove();
+    let p2 = document.createElement("p");
+    p2.setAttribute("id", "p2Choice");
+    let textP2 = document.createTextNode("PLAYER 2");
+    p2.appendChild(textP2);
+    document.getElementById("player2").appendChild(p2);
+    document.getElementById("result").remove();
+    let p = document.createElement("p");
+    p.setAttribute("id", "result");
+    let text = document.createTextNode("LET'S GO");
+    p.appendChild(text);
+    document.getElementById("res").appendChild(p);
     let count = 0;
     while(count<2){
         if(count%2==0){
@@ -173,27 +198,29 @@ async function onevone(){
             console.log(sp2);
             if(sp1=='R'&&sp2=='P'){
                 scoreP2++;
-                console.log("P2 wins");
+                p2won();
             }
             else if(sp1=='R'&&sp2=='S'){
                 scoreP1++;
-                console.log("P1 wins");
+                p1won();
             }
             else if(sp1=='P'&&sp2=='R'){
                 scoreP1++;
-                console.log("P1 wins");
+                p1won();
             }
             else if(sp1=='P'&&sp2=='S'){
                 scoreP2++;
-                console.log("P2 wins");
+                p2won();
             }
             else if(sp1=='S'&&sp2=='R'){
                 scoreP2++;
-                console.log("P2 wins");
+                p2won();
             }
             else if(sp1=='S'&&sp2=='P'){
                 scoreP1++;
-                console.log("P1 wins");
+                p1won();
+            }else{
+                draw();
             }
             showstats();
             updateScoreBoard();
@@ -202,4 +229,9 @@ async function onevone(){
             count++;
         }
     } 
+}
+
+function onevone(){
+    document.getElementById("unhide").classList.remove("hideStuff");
+    match();
 }

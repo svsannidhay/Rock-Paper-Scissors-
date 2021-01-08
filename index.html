@@ -39,12 +39,17 @@
         </div>
     </section>
     <section class="results">
-        <div class="row">
+        <div id="unhide" class="row hideStuff">
             <div id = "player1" class="timerPlayer1 col span-1-of-3">
                 <p id="p1Choice">PLAYER 1</p>
             </div>
-            <div id="res" class="scoreBoard col span-1-of-3">
-                <p id="result">LET'S GO</p>
+            <div class="scoreBoard col span-1-of-3">
+                <div id="res">
+                    <p id="result">LET'S GO</p>
+                </div>
+                <div id="nextr">
+                    <a onclick="match();event.preventDefault();" href="#" id="nextRound">NEXT ROUND!</a>
+                </div>
             </div>
             <div id ="player2" class="timerPlayer2 col span-1-of-3">
                 <p id = "p2Choice">PLAYER 2</p>
@@ -54,13 +59,13 @@
     <section class="playArea">
         <div class="row">
             <div class="rock col span-1-of-3">
-                <img onclick= "clickRock();" src="/static/images/rock.png" alt="Rock">
+                <img onclick= "clickRock();" src="static/images/rock.png" alt="Rock">
             </div>
             <div class="paper col span-1-of-3">
-                <img onclick = "clickPaper();" src="/static/images/paper.png" alt="Rock">
+                <img onclick = "clickPaper();" src="static/images/paper.png" alt="Rock">
             </div>
             <div class="scissors col span-1-of-3">
-                <img onclick = "clickScissors()" src="/static/images/scissors.png" alt="Rock">
+                <img onclick = "clickScissors()" src="static/images/scissors.png" alt="Rock">
             </div>
         </div>
     </section>

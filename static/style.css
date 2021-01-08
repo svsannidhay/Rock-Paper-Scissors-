@@ -24,7 +24,7 @@ html {
     visibility: hidden;
 }
 body{
-    background: linear-gradient(rgba(70, 70, 70, 0.651),rgba(238, 87, 87, 0.418)),url("/static/images/background.jpg");
+    background: linear-gradient(rgba(70, 70, 70, 0.651),rgba(238, 87, 87, 0.418)),url("images/background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -143,6 +143,39 @@ header{
     font-weight: 100;
     background-color: rgb(114, 66, 66);
     border: 1px solid rgb(66, 25, 25);
+}
+#nextr{
+    text-align: center;
+}
+#nextRound:link,
+#nextRound:visited{
+    display: inline-block;
+    width:250px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 12px 14px;
+    background-color: rgb(114, 66, 66);
+    border: 1px solid rgb(66, 25, 25);
+    ;
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
+    transition: box-shadow 0.3s,
+    background-color 0.3s,
+    transform 0.2s;
+}
+#nextRound:hover {
+    background-color: rgb(138, 79, 79);
+    transform: translateY(1px);
+    box-shadow: 4px 4px 10px rgb(44, 18, 18);
+}
+#nextRound:active {
+    background-color: rgb(167, 85, 85);
+    transform: translateY(2px);
+    box-shadow: 4px 0 10px rgb(44, 18, 18);
+}
+.hideStuff{
+    visibility: hidden;
 }
 .playArea{
     margin-top: 50px;
