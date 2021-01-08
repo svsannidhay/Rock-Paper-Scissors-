@@ -1,10 +1,11 @@
+var time1,time2;
 async function startClock1(){
-    let time = 1*1000;
+    time1 = 1*1000;
     return new Promise(function (resolve, reject) {
         let t = setInterval(function(){
-            time--;
-            let tenseconds = Math.floor(time/10000);
-            let tseconds = time - tenseconds*10000;
+            time1--;
+            let tenseconds = Math.floor(time1/10000);
+            let tseconds = time1 - tenseconds*10000;
             let oneseconds = Math.floor(tseconds/1000);
             let tmseconds = tseconds - oneseconds*1000;
             let tenmseconds = Math.floor(tmseconds/100);
@@ -16,7 +17,7 @@ async function startClock1(){
             let text = document.createTextNode(`${tenseconds}${oneseconds}:${tenmseconds}${onemseconds}`);
             p.appendChild(text);
             document.getElementById("tP1").appendChild(p);
-            if (time == 0) {
+            if (time1 == 0) {
                 resolve();
                 clearInterval(t);
             }
@@ -24,12 +25,12 @@ async function startClock1(){
     });
 }
 function startClock2(){
-    let time = 1*1000;
+    time2 = 1*1000;
     return new Promise(function(resolve,reject){
         let t = setInterval(function(){
-            time--;
-            let tenseconds = Math.floor(time / 10000);
-            let tseconds = time - tenseconds * 10000;
+            time2--;
+            let tenseconds = Math.floor(time2 / 10000);
+            let tseconds = time2 - tenseconds * 10000;
             let oneseconds = Math.floor(tseconds / 1000);
             let tmseconds = tseconds - oneseconds * 1000;
             let tenmseconds = Math.floor(tmseconds / 100);
@@ -43,7 +44,7 @@ function startClock2(){
             );
             p.appendChild(text);
             document.getElementById("tP2").appendChild(p);
-            if (time == 0) {
+            if (time2 == 0) {
                 resolve();
                 clearInterval(t);
             }
@@ -64,25 +65,31 @@ var rpsArray = ['R','P','S'];
 function clickRock(){
     if(turn==1){
         sp1 = 'R';
+        time1 = 1;
     }
     if(turn==2){
         sp2 = 'R';
+        time2 = 1;
     }
 }
 function clickPaper(){
     if(turn==1){
         sp1 = 'P';
+        time1 = 1;
     }
     if(turn==2){
         sp2 = 'P';
+        time2 = 1;
     }
 }
 function clickScissors(){
     if(turn==1){
         sp1 = 'S';
+        time1 = 1;
     }
     if(turn==2){
         sp2 = 'S';
+        time2 = 1;
     }
 }
 
